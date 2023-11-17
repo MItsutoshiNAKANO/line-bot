@@ -1,16 +1,16 @@
 # @line/bot-sdk-8.0.1's MessagingApiClient.pushMessage() sends wrong 'Content-Type': 'application/x-www-form-urlencoded', so the pushMessage() throws HTTPError: Request failed with status code 415
 
 Hi!
-I'm upgrating @line/bot-sdk to 8.0.1
+I'm upgrading @line/bot-sdk to 8.0.1
 on <https://github.com/MItsutoshiNAKANO/DiffRss/>.
 But MessagingApiClient.pushMessage() throws
 HTTPError: Request failed with status code 415.
-So I sent a message in <https://github.com/line/line-bot-sdk-nodejs/commit/ec8f8284231c91d57fadba8c4223e18416a53e5a>.
+So, I sent a message in <https://github.com/line/line-bot-sdk-nodejs/commit/ec8f8284231c91d57fadba8c4223e18416a53e5a>.
 But You said "The implementation is working on my end".
 
-So I wrote a mini script.
+So, I wrote a mini script.
 And I ran it to 2 environments.
-I reproduce the issue on the both environment.
+I reproduce the issue on the both environments.
 
 1) Windows 11 Pro 10.0.22631 build 22631 + scoop Node.js v20.9.0 + npm 10.1.0 + Git Bash 2.42.0.windows.2
 2) Ubuntu 22.04.3 LTS 5.19.0-50-generic + nvm 0.39.1 + node v20.9.0 + npm 10.2.4
