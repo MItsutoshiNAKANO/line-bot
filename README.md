@@ -23,7 +23,7 @@ I misunderstood the specification about arguments
 of MessagingApiClient.pushMessage() in @line/bot-sdk.
 So, I wrote the wrong script.
 
-* @see <./misunderstanding.md>
+* @see <misunderstanding.md>
 * @see <https://github.com/line/line-bot-sdk-nodejs/issues/598>
 
 Now, my bug was fixed.
