@@ -10,9 +10,11 @@ import fs from'fs'
 
 function send (text, to, channelAccessToken) {
   const lineClient = new MessagingApiClient({ channelAccessToken })
-  return lineClient.pushMessage(to, [{ type: 'text', text }])
+  return lineClient.pushMessage({
+    to, messages: [{ type: 'text', text: text }]
+  })
 }
 
 const file = fs.readFileSync('.line-bot.rc.json', 'utf8')
 const { channelAccessToken, to } = JSON.parse(file)
-send(process.argv.join(), to, channelAccessToken)
+send(process.argv.slice(2).join(), to, channelAccessToken)
