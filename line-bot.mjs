@@ -1,20 +1,15 @@
 #! /usr/bin/env node
 'use strict'
 /** SPDX-License-Identifier: MIT */
+import fs from 'fs'
 /**
  * @see https://github.com/line/line-bot-sdk-nodejs/blob/master/docs/guide/client.md
  */
 import { messagingApi } from '@line/bot-sdk'
 const { MessagingApiClient } = messagingApi
-import fs from'fs'
-
-function send (text, to, channelAccessToken) {
-  const lineClient = new MessagingApiClient({ channelAccessToken })
-  return lineClient.pushMessage({
-    to, messages: [{ type: 'text', text: text }]
-  })
-}
 
 const file = fs.readFileSync('.line-bot.rc.json', 'utf8')
 const { channelAccessToken, to } = JSON.parse(file)
-send(process.argv.slice(2).join(), to, channelAccessToken)
+new MessagingApiClient({ channelAccessToken }).pushMessage({
+  to, messages: [{ type: 'text', text: process.argv.slice(2).join() }]
+})
